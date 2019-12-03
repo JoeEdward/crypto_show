@@ -19,5 +19,6 @@ class IndexController extends ControllerAbstract
         $view = Factory::buildObject('IndexView');
         $view->createForm();
         $this->html_output = $view->getHtmlOutput();
+        // Hello!
     }
 }
