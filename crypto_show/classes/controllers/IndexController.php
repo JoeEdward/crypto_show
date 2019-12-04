@@ -20,5 +20,6 @@ class IndexController extends ControllerAbstract
         $view->createForm();
         $this->html_output = $view->getHtmlOutput();
         // Hello!
+        //Hello 2!
     }
 }
