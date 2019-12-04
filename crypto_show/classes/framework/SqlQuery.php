@@ -72,6 +72,16 @@
    return $sql_query_string;
   }
 
+  public static function queryStoreNewMachineDetails() {
+    $sql_query_string = 'INSERT INTO crypto_machine';
+    $sql_query_string .= ' SET';
+    $sql_query_string .= ' fk_user_id = :userid,';
+    $sql_query_string .= ' crypto_machine_name = :name,';
+    $sql_query_string .= ' crypto_machine_image_name = :image,';
+    $sql_query_string .= ' crypto_machine_record_visible = :private';
+    return $sql_query_string;
+
+  }
   public static function queryLogErrorMessage()
   {
    $sql_query_string  = 'INSERT INTO cryptoshow_error_log';

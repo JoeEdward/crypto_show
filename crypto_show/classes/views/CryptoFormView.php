@@ -36,9 +36,29 @@ class CryptoFormView extends WebPageTemplateView
 
         $this->html_page_content = <<< HTMLFORM
 <h2>$page_heading</h2>
+<hr>
 <form action="$action" method="$form_metod" enctype="multipart/form-data">
-<input type="text" placeholder="Hello">
+<div class="input-group">
+<label for="name">Name</label><br>
+<input type="text" placeholder="Type Here!" name="name">
+</div>
+
+<div class="input-group">
+<label for="image">Image Upload</label><br>
+<input type="file" name="image">
+</div>
+
+<div class="input-group">
+<label for="private" style="padding-right: 0.5rem">Private</label>
+<input type="checkbox" name="private">
+</div>
+
+<div class="input-group">
+<button type="submit" name="route" value="process-new-machine">Submit</button>
+</div>
+
 </form> 
 HTMLFORM;
+
     }
 }

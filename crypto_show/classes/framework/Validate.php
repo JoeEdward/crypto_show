@@ -37,7 +37,8 @@ class Validate
             'user_login',
             'process_login',
             'user_logout',
-            'create-new-machine'
+            'create-new-machine',
+            'process-new-machine',
         ];
 
         if (in_array($route, $routes))
