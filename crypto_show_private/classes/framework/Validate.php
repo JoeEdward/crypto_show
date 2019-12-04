@@ -36,9 +36,7 @@ class Validate
             'process_new_user_details',
             'user_login',
             'process_login',
-            'user_logout',
-            'create-new-machine',
-            'process-new-machine',
+            'user_logout'
         ];
 
         if (in_array($route, $routes))
@@ -106,52 +104,6 @@ class Validate
             }
         }
         return $validated_email_to_return;
-    }
-
-    public function validateImage(string $datum_name, array $tainted, int $file_size) {
-        $uploadOk = false;
-        if(!empty($_FILES[$datum_name])){
-            $uploadOk = true;
-        }
-
-        $target_file = 'media/crypto_machine_pics/' . basename($_FILES[$datum_name]['name']);
-        $file_type = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        if (file_exists($target_file)) {
-            echo "Sorry, file already exists.";
-            $uploadOk = false;
-        }
-        if ($_FILES[$datum_name]["size"] > $file_size) {
-            return "Sorry, your file is too large.";
-            $uploadOk = false;
-        }
-        if($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg"
-            && $file_type != "gif" ) {
-            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            $uploadOk = false;
-        }
-
-        if (!$uploadOk) {
-            echo "Sorry, your file was not uploaded.";
-            return $uploadOk;
-            // if everything is ok, try to upload file
-        } else {
-            if (move_uploaded_file($_FILES[$datum_name]["tmp_name"], $target_file)) {
-                echo "The file ". basename( $_FILES[$datum_name]["name"]). " has been uploaded.";
-                return $target_file;
-            } else {
-                echo "Sorry, there was an error uploading your file.";
-                return false;
-            }
-        }
-
-    }
-
-    public function validateCheckbox(string $datum_name, $tainted) {
-        if (!isset($tainted[$datum_name])) {
-            return 'NO';
-        } else {
-            return 'YES';
-        }
     }
 
     public function checkForError($cleaned)

@@ -27,9 +27,12 @@ class NewMachineProcessModel extends ModelAbstract
         $this->validated_machine_result = $validated_input;
     }
 
+    public function getCreatedMachineResult() {
+        return $this->create_machine_result;
+    }
+
     public function storeNewMachineDetails() {
         $new_machine_details_stored = false;
-        var_dump($this->validated_machine_result);
         $sql_query = SqlQuery::queryStoreNewMachineDetails();
         $sql_options = array(
             ':userid' => $_SESSION['user-id'],
