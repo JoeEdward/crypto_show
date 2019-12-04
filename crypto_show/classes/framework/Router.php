@@ -80,6 +80,9 @@ class Router
             case 'process_login':
                 $controller = Factory::buildObject('UserLoginProcessController');
                 break;
+            case 'process-new-machine':
+                $controller = Factory::buildObject('NewMachineProcessController');
+                break;
             case 'user_logout':
                 $controller = Factory::buildObject('UserLogoutProcessController');
                 break;
