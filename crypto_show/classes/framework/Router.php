@@ -90,6 +90,9 @@ class Router
                 $controller = Factory::buildObject('ErrorController');
                 $controller->setErrorType('route-not-found-error');
                 break;
+            case 'create-new-machine':
+                $controller = Factory::buildObject('CryptoFormController');
+                break;
             case 'index':
             default:
             $controller = Factory::buildObject('IndexController');

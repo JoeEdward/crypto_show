@@ -86,6 +86,7 @@ HTML;
    if ($logged_in)
    {
     $menu_option_buttons .= '<button name="route" value="user_logout">Logout</button>';
+    $menu_option_buttons .= '<button name="route" value="create-new-machine">Create New Machine</button>';
    }
    else
    {
