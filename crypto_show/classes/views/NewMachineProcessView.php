@@ -73,7 +73,7 @@ HTMLFORM;
         $page_content = <<< HTMLOUTPUT
 <p>Ooops - there appears to have been an error - please check that you correctly entered all the required values.</p>
 <form method="$form_method" action="$form_action">
-<p><button name="route" value="user_register" /><img src="$path_to_image" alt="Sad face" /><br />Try again</button></p>
+<p><button name="route" value="create-new-machine" /><img src="$path_to_image" alt="Sad face" /><br />Try again</button></p>
 </form>
 HTMLOUTPUT;
         return $page_content;
