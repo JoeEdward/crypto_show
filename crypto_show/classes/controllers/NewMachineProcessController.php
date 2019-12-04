@@ -6,7 +6,7 @@ class NewMachineProcessController extends ControllerAbstract
     public function createHtmlOutput()
     {
         $input_error = true;
-        $register_new_user_result = [];
+        $register_new_machine_result = [];
 
         $validated_input = $this->validate();
         $input_error = $validated_input['input-error'];
