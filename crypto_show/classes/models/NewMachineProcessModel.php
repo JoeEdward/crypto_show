@@ -34,11 +34,15 @@ class NewMachineProcessModel extends ModelAbstract
     public function storeNewMachineDetails() {
         $new_machine_details_stored = false;
         $sql_query = SqlQuery::queryStoreNewMachineDetails();
+        $private = 0;
+        if ($this->validated_machine_result['validated-machine-private'] === "YES") {
+            $private = 1;
+        }
         $sql_options = array(
             ':userid' => $_SESSION['user-id'],
             ':name' => $this->validated_machine_result['validated-machine-name'],
             ':image' => $this->validated_machine_result['validated-machine-image'],
-            ':private' => 0
+            ':private' => $private
         );
 
         try {
