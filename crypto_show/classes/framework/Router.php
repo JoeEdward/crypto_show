@@ -41,7 +41,7 @@ class Router
      * @return mixed|string
      */
 
-    private function setRouteName(): string
+    private function setRouteName()
     {
         $selected_route = 'index';
         if (isset($_POST['route']))
@@ -56,7 +56,7 @@ class Router
      * If not valid, chances are that a user is attempting something malicious.
      * In which case, kill the app's execution.
      */
-    private function validateRouteName($selected_route): bool
+    private function validateRouteName($selected_route)
     {
         $route_exists = false;
         $validate = Factory::buildObject('Validate');
@@ -87,7 +87,8 @@ class Router
                 $controller = Factory::buildObject('UserLogoutProcessController');
                 break;
             case 'display-crypto-details':
-                $controller = Factory::buildObject('DisplayCryptoDetailsController');
+
+                $controller = Factory::buildObject('ListMachinesController');
                 break;
             case 'route-error':
                 $controller = Factory::buildObject('ErrorController');

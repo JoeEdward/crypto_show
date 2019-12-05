@@ -39,6 +39,7 @@ class Validate
             'user_logout',
             'create-new-machine',
             'process-new-machine',
+            'display-crypto-details'
         ];
 
         if (in_array($route, $routes))
